@@ -1,4 +1,5 @@
 ## 1.基本数据结构
+
 String：字符串   List：列表   Set:无序集合   ZSet：有序集合   Hash：散列
 
 ## 2.常用配置选项
@@ -62,6 +63,7 @@ Hash：hmset key field value.. /hget key field
 检查key中是否存在field：hexists key field
 
 ### --List--
+
 删除列表中的指定元素：lrem key count value
 
 count > 0 从头向尾搜索，删除count个value
@@ -81,6 +83,7 @@ count < 0 从尾向头搜索，删除绝对count个value
 删除成员：srem key member..
 
 ### --ZSet--
+
 返回指定分数区间的成员数：zcount key min max //包含min和max
 
 返回排名：zrank key member
@@ -91,10 +94,56 @@ count < 0 从尾向头搜索，删除绝对count个value
 
 ## 5.基本数据结构总数
 
-列表：llen key
+list：llen key
+
 Hash：hlen key
+
 set：scard key
+
 zset：zcard key
+
+## 6.发布订阅
+
+发布：publish channel msg
+
+订阅：subscribe channel..
+
+取消订阅：unsubscribe channel...
+
+## 7.批量命令
+
+批量命令在exec执行之前会暂存到队列，开始执行后，前面命令的失败不会阻碍后面命令的执行
+
+批量开始：multi
+
+批量终止：discard
+
+批量执行：exec
+
+## 8.连接操作
+
+验证密码是否正确：auth password
+
+数据库切换：select index
+
+服务是否可用：ping  // 可用返回pong
+
+## 9.服务端操作
+
+后台异步保存数据到磁盘：bgsave
+
+查看客户端列表：client list
+
+修改配置无需重启：config set property value
+
+当前数据库key的数量：dbszie
+
+清空当前数据库所有key：flushdb
+
+清空全部数据库所有key：flushall
+
+
+
 
 
 
