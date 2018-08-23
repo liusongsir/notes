@@ -1,7 +1,7 @@
-1.基本数据结构
+## 1.基本数据结构
 String：字符串   List：列表   Set:无序集合   ZSet：有序集合   Hash：散列
 
-2.常用配置选项
+## 2.常用配置选项
 指定是否使用守护进程：daemonize no
 日志级别：loglevel verbose  //Redis总共支持四个级别：debug、verbose、notice、warning，默认为verbose
 日志文件：logfile stdout  //默认是标准输出
@@ -11,14 +11,14 @@ String：字符串   List：列表   Set:无序集合   ZSet：有序集合   Ha
 本机作为slave自动同步master的数据：slaveof <masterip> <masterport>
 本机作为slave连接master的密码：masterauth <master-password>
 
-3.基本命令
+## 3.基本命令
 字符串：set key value / get key / del key / exists key / expire key seconds
 列表：lpush key value.. / lrange key start stop
 Hash：hmset key field value.. /hget key field
 无序集合：sadd key member..  / smembers key
 有序集合：zadd key score member.. / zrangbyscore key min  max
 
-4.进阶命令
+## 4.进阶命令
 --字符串--
 设置并返回key更新前的值：getset key value
 同时返回多个key的值：mget key..
