@@ -15,9 +15,9 @@ String：字符串   List：列表   Set:无序集合   ZSet：有序集合   Ha
 
 设置连接密码：requirepass password  //默认无密码
 
-本机作为slave自动同步master的数据：slaveof <masterip> <masterport>
+本机作为slave自动同步master的数据：slaveof &lt;masterip&gt; &lt;masterport&gt;
   
-本机作为slave连接master的密码：masterauth <master-password>
+本机作为slave连接master的密码：masterauth &lt;master-password&gt;
 
 
 ## 3.基本命令
@@ -34,7 +34,7 @@ Hash：hmset key field value.. /hget key field
 
 ## 4.进阶命令
 
-###--字符串--
+### --字符串--
 
 设置并返回key更新前的值：getset key value
 
@@ -51,34 +51,46 @@ Hash：hmset key field value.. /hget key field
 追件或设置值为字符串的key：append key value  //不存在则设置
 
 
-###--Hash--
+###  --Hash--
 
 删除key中的field：hdel key field
 
 查询全部字段和值：hgetall key
+
 设置或更新字段值：hset key field value
+
 检查key中是否存在field：hexists key field
 
---List--
+### --List--
 删除列表中的指定元素：lrem key count value
+
 count > 0 从头向尾搜索，删除count个value
+ 
 count = 0 删除全部value
+
 count < 0 从尾向头搜索，删除绝对count个value
 
---Set--
+### --Set--
+
 差集：sdiff key1 key2.. //(key1-key2)-...
+
 交集：sinter key1 key2.. //key1 ∩ key2 ∩ ..
+
 并集：sunion key1 key2..
+
 删除成员：srem key member..
 
---ZSet--
+### --ZSet--
 返回指定分数区间的成员数：zcount key min max //包含min和max
+
 返回排名：zrank key member
+
 返回分数值：zscore key member
+
 删除成员：zrem key member...
 
+## 5.基本数据结构总数
 
-5.基本数据结构总数
 列表：llen key
 Hash：hlen key
 set：scard key
